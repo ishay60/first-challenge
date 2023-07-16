@@ -11,7 +11,7 @@ export default function App() {
         <Avatar />
         <div className="data">
           <Intro />
-          <SkillList className="skill-list" />
+          <SkillList />
         </div>
       </div>
     </div>
@@ -50,13 +50,17 @@ function Description() {
 function SkillList() {
   return ishay.skills.map((skill, index) => {
     return (
-      <div>
-        <Skill className="skill" key={index} skill={skill} />
+      <div className="skill-list">
+        <Skill key={index} skill={skill} color={ishay.color[index]} />
       </div>
     );
   });
 }
-const Skill = ({ skill }) => <p>{skill} 💪</p>;
+const Skill = (props) => (
+  <div className="skill" style={{ backgroundColor: props.color }}>
+    <p>{props.skill} 💪</p>
+  </div>
+);
 
 const ishay = {
   name: "Ishay Rosengarten",
@@ -66,4 +70,12 @@ const ishay = {
     "Quick learner with a strong ability to adapt to new technologies and programming languages.",
   ],
   skills: ["c++", "JS", "React", "Unity/C#", "HTML", "Css"],
+  color: [
+    "aquamarine",
+    "yellow",
+    "dodgerblue",
+    "teal",
+    "orange",
+    "cornflowerblue",
+  ],
 };
