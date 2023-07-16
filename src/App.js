@@ -39,12 +39,27 @@ function Intro() {
 
 function Description() {
   return ishay.description.map((description, index) => {
+    const randomColor = getRandomColor(); // Generate a random color
     return (
-      <div key={index} description={description}>
+      <div
+        key={index}
+        style={{ backgroundColor: randomColor }} // Use the random color as the background color
+        className="description"
+      >
         {description}
       </div>
     );
   });
+}
+
+function getRandomColor() {
+  //this is some chat gpt evil forces right there
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
 
 function SkillList() {
@@ -68,6 +83,8 @@ const ishay = {
   description: [
     "Highly passionate about technology and software development.",
     "Quick learner with a strong ability to adapt to new technologies and programming languages.",
+    "Cooks the best meals in Tel Aviv 👨🏼‍🍳",
+    "Game Dev enthusiast",
   ],
   skills: ["c++", "JS", "React", "Unity/C#", "HTML", "Css"],
   color: [
@@ -79,3 +96,4 @@ const ishay = {
     "cornflowerblue",
   ],
 };
+
