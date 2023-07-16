@@ -62,7 +62,7 @@ const ishay = {
   name: "Ishay Rosengarten",
   photo: ishayPhoto,
   description: [
-    " Highly passionate about technology and software development.",
+    "Highly passionate about technology and software development.",
     "Quick learner with a strong ability to adapt to new technologies and programming languages.",
   ],
   skills: ["c++", "JS", "React", "Unity/C#", "HTML", "Css"],
