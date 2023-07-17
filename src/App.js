@@ -82,10 +82,11 @@ const Skill = (props) => (
     className="skill"
     style={{ backgroundColor: props?.color }}
   >
-    <p>{props.skill} 💪</p>
+    <p>
+      {props.skill} {props.skill === "c++" ? "🥵" : "💪"}
+    </p>
   </span>
 );
-
 
 const ishay = {
   name: "Ishay Rosengarten",
@@ -96,11 +97,11 @@ const ishay = {
     "Cooks the best meals in Tel Aviv 👨🏼‍🍳",
     "Game Dev enthusiast",
   ],
-  skills: ["c++", "JS", "React", "Unity/C#", "HTML", "Css"],
+  skills: ["JS", "React", "c++", "Unity/C#", "HTML", "Css"],
   color: [
-    "aquamarine",
     "yellow",
     "dodgerblue",
+    "aquamarine",
     "teal",
     "orange",
     "cornflowerblue",
