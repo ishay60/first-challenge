@@ -11,7 +11,9 @@ export default function App() {
         <Avatar />
         <div className="data">
           <Intro />
-          <SkillList />
+          <span>
+            <SkillList className="skill-list" />
+          </span>
         </div>
       </div>
     </div>
@@ -43,8 +45,8 @@ function Description() {
     return (
       <div
         key={index}
-        // style={{ backgroundColor: randomColor }} // Use the random color as the background color
         className="description"
+        // style={{ backgroundColor: randomColor }} // Use the random color as the background color
       >
         {description}
       </div>
@@ -63,19 +65,27 @@ function Description() {
 // }
 
 function SkillList() {
-  return ishay.skills.map((skill, index) => {
-    return (
-      <div className="skill-list">
-        <Skill key={index} skill={skill} color={ishay.color[index]} />
-      </div>
-    );
-  });
+  return (
+    <ul className="skill-list">
+      {ishay.skills.map((skill, index) => (
+        <li key={index}>
+          <Skill skill={skill} color={ishay.color[index]} />
+        </li>
+      ))}
+    </ul>
+  );
 }
+
 const Skill = (props) => (
-  <div className="skill" style={{ backgroundColor: props.color }}>
+  <span
+    key={props?.index}
+    className="skill"
+    style={{ backgroundColor: props?.color }}
+  >
     <p>{props.skill} 💪</p>
-  </div>
+  </span>
 );
+
 
 const ishay = {
   name: "Ishay Rosengarten",
