@@ -83,7 +83,7 @@ const Skill = ({ skill, color, level }) => (
     <span className="skill" style={{ backgroundColor: color }}>
       <>
         <p>
-          {skill} {level === "intermediate" ? "🪫" : "💪"}
+          {skill} {level}
         </p>
       </>
     </span>
@@ -104,32 +104,32 @@ const ishay = {
 const skills = [
   {
     skill: "JS",
-    level: "beginner",
+    level: "💪",
     color: "yellow",
   },
   {
     skill: "React",
-    level: "begginer",
+    level: "💪",
     color: "dodgerblue",
   },
   {
     skill: "C++",
-    level: "intermediate",
+    level: "🪫",
     color: "aquamarine",
   },
   {
     skill: "Unity/C#",
-    level: "begginer",
+    level: "🙄",
     color: "teal",
   },
   {
     skill: "HTML",
-    level: "beginner",
+    level: "💪",
     color: "orange",
   },
   {
     skill: "CSS",
-    level: "begginer",
+    level: "💪",
     color: "cornflowerblue",
   },
 ];
