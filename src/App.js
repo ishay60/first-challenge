@@ -7,15 +7,17 @@ import ishayPhoto from "./photos/ishayPhoto.jpg";
 export default function App() {
   return (
     <div className="container">
-      <div className="card">
-        <Avatar />
-        <div className="data">
-          <Intro />
-          <span>
-            <SkillList className="skill-list" />
-          </span>
+      <>
+        <div className="card">
+          <Avatar />
+          <div className="data">
+            <Intro />
+            <span>
+              <SkillList className="skill-list" />
+            </span>
+          </div>
         </div>
-      </div>
+      </>
     </div>
   );
 }
@@ -67,25 +69,25 @@ function Description() {
 function SkillList() {
   return (
     <ul className="skill-list">
-      {ishay.skills.map((skill, index) => (
+      {skills.map((skill, index) => (
         <li key={index}>
-          <Skill skill={skill} color={ishay.color[index]} />
+          <Skill skill={skill.skill} color={skill.color} level={skill.level} />
         </li>
       ))}
     </ul>
   );
 }
 
-const Skill = (props) => (
-  <span
-    key={props?.index}
-    className="skill"
-    style={{ backgroundColor: props?.color }}
-  >
-    <p>
-      {props.skill} {props.skill === "c++" ? "🥵" : "💪"}
-    </p>
-  </span>
+const Skill = ({ skill, color, level }) => (
+  <>
+    <span className="skill" style={{ backgroundColor: color }}>
+      <>
+        <p>
+          {skill} {level === "intermediate" ? "🪫" : "💪"}
+        </p>
+      </>
+    </span>
+  </>
 );
 
 const ishay = {
@@ -97,14 +99,37 @@ const ishay = {
     "Cooks the best meals in Tel Aviv 👨🏼‍🍳",
     "Game Dev enthusiast",
   ],
-  skills: ["JS", "React", "c++", "Unity/C#", "HTML", "Css"],
-  color: [
-    "yellow",
-    "dodgerblue",
-    "aquamarine",
-    "teal",
-    "orange",
-    "cornflowerblue",
-  ],
 };
 
+const skills = [
+  {
+    skill: "JS",
+    level: "beginner",
+    color: "yellow",
+  },
+  {
+    skill: "React",
+    level: "begginer",
+    color: "dodgerblue",
+  },
+  {
+    skill: "C++",
+    level: "intermediate",
+    color: "aquamarine",
+  },
+  {
+    skill: "Unity/C#",
+    level: "begginer",
+    color: "teal",
+  },
+  {
+    skill: "HTML",
+    level: "beginner",
+    color: "orange",
+  },
+  {
+    skill: "CSS",
+    level: "begginer",
+    color: "cornflowerblue",
+  },
+];
